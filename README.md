@@ -4,8 +4,7 @@ This repo contains a react-native app that demos integration and use of [ymchat-
 
 1. Clone the app using `git clone https://github.com/yellowmessenger/ymchat-react-native-demo`
 2. Run `yarn install`
-3. iOS
-   For iOS run following commands
+3. For iOS run following commands
       - cd iOS
       - pod install
       - open react_native_demo_app.xcworkspace/
