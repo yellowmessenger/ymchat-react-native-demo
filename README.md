@@ -1,3 +1,4 @@
+This repo contains a react-native app that demos integration and use of [ymchat-react-native](https://github.com/yellowmessenger/ymchat-react-native)
 
 # Setup
 
