@@ -5,7 +5,7 @@
 2. Run `yarn install`
 3. iOS
    For iOS run following commands
-  - cd iOS
-  - pod install
-  - open react_native_demo_app.xcworkspace/
-  - run the project
+      - cd iOS
+      - pod install
+      - open react_native_demo_app.xcworkspace/
+      - run the project
