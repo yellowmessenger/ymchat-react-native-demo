@@ -19,6 +19,7 @@ const App: () => Node = () => {
     YMChat.setBotId(botId); // Default Bot Id
     YMChat.setEnableHistory(true);
     // ... OTHER Configurations. (refer: https://github.com/yellowmessenger/ymchat-react-native)
+    YMChat.setVersion(2);
     YMChat.startChatbot();
   };
 
