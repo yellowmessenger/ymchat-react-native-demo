@@ -82,7 +82,6 @@ const App = () => {
       .then(token => {
         console.log(token);
         YMChat.setBotId('x1608615889375'); // Default Bot Id
-        YMChat.setEnableHistory(true);
         // ... OTHER Configurations. (refer: https://github.com/yellowmessenger/ymchat-react-native)
         YMChat.setDeviceToken(token);
         YMChat.startChatbot();
