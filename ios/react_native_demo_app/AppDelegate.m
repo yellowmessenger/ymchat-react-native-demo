@@ -1,8 +1,12 @@
 #import "AppDelegate.h"
 
+#if RCT_DEV
+#import <React/RCTDevLoadingView.h>
+#endif
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+@import Firebase;
 
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
@@ -30,6 +34,7 @@ static void InitializeFlipper(UIApplication *application) {
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
+  [FIRApp configure];
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
@@ -47,7 +52,31 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+  UNAuthorizationOptions authOptions = UNAuthorizationOptionAlert |
+  UNAuthorizationOptionSound | UNAuthorizationOptionBadge;
+  [[UNUserNotificationCenter currentNotificationCenter]
+   requestAuthorizationWithOptions:authOptions
+   completionHandler:^(BOOL granted, NSError * _Nullable error) {
+    // ...
+  }];
+  
+  [application registerForRemoteNotifications];
   return YES;
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  [FIRMessaging messaging].APNSToken = deviceToken;
+  
+  [[FIRMessaging messaging] tokenWithCompletion:^(NSString *token, NSError *error) {
+    if (error != nil) {
+      NSLog(@"Error getting FCM registration token: %@", error);
+    } else {
+      NSLog(@"FCM registration token: %@", token);
+    }
+  }];
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
