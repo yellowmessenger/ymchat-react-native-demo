@@ -1171,7 +1171,7 @@
 
 "@react-native-firebase/app@^12.7.5":
   version "12.7.5"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.7.5.tgz#337fd517a6329dd9d734b36ca91bf0c54cc3a337"
+  resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-12.7.5.tgz"
   integrity sha512-q3NjTHiO4zjPmXopuRuBxbJw5rX5JqqQmE6a+77ONEI+yCx1VF/p+545+plOY1HhA8PqUuWfbqZlbWlYo5K5IA==
   dependencies:
     "@expo/config-plugins" "^3.1.0"
@@ -5504,9 +5504,9 @@ react-native-codegen@^0.0.6:
     nullthrows "^1.1.1"
 
 react-native-webview@^11.13.0:
-  version "11.13.0"
-  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-11.13.0.tgz#a2eca0f87b2ae9bba0dd8144594aeff9947cc5d6"
-  integrity sha512-jjQAKWv8JzRmcn76fMe4lXD84AAeR7kn43kAmUe1GX312BMLaP+RbKlgpYAlNuOBXL0YirItGKDrpaD0bNROOA==
+  version "11.22.4"
+  resolved "https://registry.npmjs.org/react-native-webview/-/react-native-webview-11.22.4.tgz"
+  integrity sha512-nhDibIY2wzjA1Ydn0Kiydx5e20XJ3QWTi2wgIq4iq76pI186fqtcgcsaT69XUGLM0C2iQSn33d/joDgW20pFWg==
   dependencies:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"
@@ -7041,10 +7041,10 @@ yargs@^15.1.0, yargs@^15.3.1, yargs@^15.4.1:
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
 
-ymchat-react-native@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.npmjs.org/ymchat-react-native/-/ymchat-react-native-1.2.6.tgz"
-  integrity sha512-GCLR3B8mTFpXI/L6jWk01SYPfbTy+j5EUq1Z9X8AVGuA5qMSQTxw0AqM0jsi6FC+n7Cz7KEIdrsk+lmXmDPTeQ==
+ymchat-react-native@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.npmjs.org/ymchat-react-native/-/ymchat-react-native-2.3.0.tgz"
+  integrity sha512-IK+2qHDrkJuYUJVEmniO/db9/uNV307Fl53AxH2FYy8wEp9ufxNKj8A7LGzdPkf7x9xCsLeLRsXAxogHE67KAw==
 
 yocto-queue@^0.1.0:
   version "0.1.0"
