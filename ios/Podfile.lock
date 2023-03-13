@@ -373,10 +373,10 @@ PODS:
     - Firebase/Messaging (= 8.6.0)
     - React-Core
     - RNFBApp
-  - YMChat (1.9.3)
-  - ymchat-react-native (2.3.0):
+  - YMChat (1.9.4)
+  - ymchat-react-native (2.3.1):
     - React
-    - YMChat (~> 1.9)
+    - YMChat (~> 1.9.4)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -546,8 +546,8 @@ SPEC CHECKSUMS:
   RNFBAnalytics: ae8f44a8b706379d8af6b14b0c4d2f8c13ff1fa9
   RNFBApp: 46a6918f6b1bbb0b332fafb07ef1362bd96ca857
   RNFBMessaging: 3008c3634974b8ddd9e58f27ee1f65aa71c3ff84
-  YMChat: 648ea2d95c0589f70bf102e64628503ef0188ca0
-  ymchat-react-native: 05c087feb38ebf125e17bf21fba99f0e727ffba8
+  YMChat: e6389eced205141b453b050d34855acdc02edd6a
+  ymchat-react-native: 9bc991cecaa812531931a79d3b91711af5c9787c
   Yoga: a7de31c64fe738607e7a3803e3f591a4b1df7393
 
 PODFILE CHECKSUM: 57b7301ce1669b1a6afab79cd5e0a4c3c30f6cab
