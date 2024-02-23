@@ -1112,6 +1112,10 @@ PODS:
     - React-logger (= 0.73.4)
     - React-perflogger (= 0.73.4)
   - SocketRocket (0.6.1)
+  - YMChat (1.16.0)
+  - ymchat-react-native (2.11.1):
+    - React
+    - YMChat (~> 1.16)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -1187,6 +1191,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - ymchat-react-native (from `../node_modules/ymchat-react-native`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1204,6 +1209,7 @@ SPEC REPOS:
     - libevent
     - OpenSSL-Universal
     - SocketRocket
+    - YMChat
 
 EXTERNAL SOURCES:
   boost:
@@ -1301,6 +1307,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  ymchat-react-native:
+    :path: "../node_modules/ymchat-react-native"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -1365,6 +1373,8 @@ SPEC CHECKSUMS:
   React-utils: 6e5ad394416482ae21831050928ae27348f83487
   ReactCommon: 840a955d37b7f3358554d819446bffcf624b2522
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
+  YMChat: c7325a2c25a2b576ecdcb2b942108fc80cb3b60f
+  ymchat-react-native: efbbccd436cea2d760063a7ad104e60336fcdbab
   Yoga: 64cd2a583ead952b0315d5135bf39e053ae9be70
 
 PODFILE CHECKSUM: 06cf2f0238e8a1c274b53477dd1cf013f629a74d
