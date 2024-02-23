@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, Button, Alert, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  Button,
+  Alert,
+  StyleSheet,
+  SafeAreaView,
+} from 'react-native';
 // @ts-ignore
 import {YMChat, YMChatEvents} from 'ymchat-react-native';
 
@@ -9,8 +16,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#faf8f6',
   },
   header: {
-    height: 60,
-    backgroundColor: '#fff685',
+    height: 40,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -49,31 +55,93 @@ const MyApp = () => {
     }
   };
 
-  const log = (name: string, data: any = null) => {
-    console.log(`Logger - ${name}:`, data);
-  };
-
   const showAlert = (description: any) => {
     Alert.alert('Event', description, [{text: 'OK'}], {cancelable: false});
   };
 
+  const botId: string = 'x1645602443989'; // Initializing chatbot id to work with in the SDK
+  const deviceToken: string = 'deviceToken';
+  const apiKey: string = 'apiKey';
+  const authToken: string = 'authToken';
+
   const openYellowSDK = () => {
-    YMChat.setBotId('x1645602443989');
+    // Set botId, the first and compulsary step.
+    YMChat.setBotId(botId);
+
+    // Adding payload to communicate with chatbot
+    YMChat.setPayload({name: 'Integration', type: 'react-native'});
+
+    // associate an identity of the user with the chat bot
+    YMChat.setAuthenticationToken(authToken);
+
+    // enables firebase notifications
+    // YMChat.setDeviceToken(deviceToken);
+
+    // enables additional security to your chat history
+    // read more about it here - 'https://docs.yellow.ai/docs/platform_concepts/mobile/chatbot/secure-ymauth'
+    // YMChat.useSecureYmAuth(true);
+
+    // If your bot is deployed on On-premise or in specific region
+    // YMChat.config.customBaseUrl = 'https://your-on-prem-url.com';
+    // or
+    // YMChat.setCustomURL('https://rx.cloud.yellow.ai');
+
+    // Enabling UI close button
+    YMChat.showCloseButton(true);
+
+    // Enabling voice input
+    YMChat.setEnableSpeech(true);
+
+    // using v2 widget
     YMChat.setVersion(2);
+
+    // hides the input bar while the bot is loading
+    YMChat.setDisableActionsOnLoad(true);
+
+    // sets status bar color
+    YMChat.setStatusBarColor('#000000');
+
+    // sets close button color
+    YMChat.setCloseButtonColor('#ffffff');
+
+    // sets mic color
+    YMChat.setMicIconColor('#000000');
+
+    // sets mic background color
+    YMChat.setMicBackgroundColor('#ffffff');
+
+    // set theme for chatbot
+    YMChat.setThemeBotName('Demo Bot Name');
+    YMChat.setThemeBotDescription('Demo Bot Description');
+    YMChat.setThemePrimaryColor('#000000');
+    YMChat.setThemeSecondaryColor('#ffffff');
+    YMChat.setThemeBotIcon(
+      'https://cdn.yellowmessenger.com/XJFcMhLpN6L91684914460598.png',
+    );
+
+    // presents the chatbot
     YMChat.startChatbot();
 
+    // Listening to bot events
     YMChatEvents.addListener('YMChatEvent', (event: {code: any; data: any}) => {
-      log(event.code, event.data);
+      console.log(event.code, event.data);
+      if (event.code === 'reloadBot') {
+        // reload the bot without closing and reopening it.
+        YMChat.reloadBot();
+      }
     });
 
+    // Listening to close bot events
     YMChatEvents.addListener('YMBotCloseEvent', () => {
-      log('Bot closed');
       showAlert('Bot Closed');
     });
+
+    // transmit data back to the bot after it has been successfully launched and is in a running state
+    // YMChat.sendEventToBot('code', {key: 'some-value'});
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>YMChat Demo</Text>
       </View>
@@ -85,7 +153,16 @@ const MyApp = () => {
             <Button
               title="Register Device"
               onPress={() => {
-                // Handle register device logic
+                try {
+                  YMChat.setBotId(botId);
+                  YMChat.setAuthenticationToken(authToken);
+                  YMChat.setDeviceToken(deviceToken);
+                  YMChat.registerDevice(apiKey, () => {
+                    console.log('Device token linked successfully');
+                  });
+                } catch (error) {
+                  console.log(`Failed to link devide token, error ${error}`);
+                }
               }}
             />
           </View>
@@ -93,7 +170,13 @@ const MyApp = () => {
             <Button
               title="Unlink device token"
               onPress={() => {
-                // Handle unlink device token logic
+                try {
+                  YMChat.unlinkDeviceToken(botId, apiKey, deviceToken, () => {
+                    console.log('Device token unlinked successfully');
+                  });
+                } catch (error) {
+                  console.log(`Failed to unlink devide token, error ${error}`);
+                }
               }}
             />
           </View>
@@ -101,7 +184,15 @@ const MyApp = () => {
             <Button
               title="Unread Message Count"
               onPress={() => {
-                // Handle unread message count logic
+                try {
+                  YMChat.setBotId(botId);
+                  YMChat.setAuthenticationToken(authToken);
+                  YMChat.getUnreadMessagesCount((count: any) => {
+                    console.log(`Unread Message Count: ${count}`);
+                  });
+                } catch (error) {
+                  console.log(`error ${error}`);
+                }
               }}
             />
           </View>
@@ -120,7 +211,7 @@ const MyApp = () => {
         </View>
         <View style={styles.spacer} />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
