@@ -39,6 +39,10 @@ target 'ymchat_react_native_demo' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'Firebase/Analytics', :modular_headers => true
+  pod 'Firebase/Messaging', :modular_headers => true
+  pod 'GoogleUtilities', :modular_headers => true
+
   target 'ymchat_react_native_demoTests' do
     inherit! :complete
     # Pods for testing
