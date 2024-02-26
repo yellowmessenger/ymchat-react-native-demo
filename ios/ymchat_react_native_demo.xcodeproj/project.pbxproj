@@ -44,6 +44,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ymchat_react_native_demo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-ymchat_react_native_demo-ymchat_react_native_demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ymchat_react_native_demo-ymchat_react_native_demoTests.release.xcconfig"; path = "Target Support Files/Pods-ymchat_react_native_demo-ymchat_react_native_demoTests/Pods-ymchat_react_native_demo-ymchat_react_native_demoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AD627F412B8C5CBC0052B558 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AD627F432B8C7AA80052B558 /* react_native_demo_app.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = react_native_demo_app.entitlements; sourceTree = "<group>"; };
 		D281D0199AA4CE82D7082DCC /* Pods_ymchat_react_native_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ymchat_react_native_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -94,6 +95,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				AD627F412B8C5CBC0052B558 /* GoogleService-Info.plist */,
+				AD627F432B8C7AA80052B558 /* react_native_demo_app.entitlements */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = ymchat_react_native_demo;
