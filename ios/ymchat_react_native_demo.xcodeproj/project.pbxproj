@@ -45,6 +45,7 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-ymchat_react_native_demo-ymchat_react_native_demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ymchat_react_native_demo-ymchat_react_native_demoTests.release.xcconfig"; path = "Target Support Files/Pods-ymchat_react_native_demo-ymchat_react_native_demoTests/Pods-ymchat_react_native_demo-ymchat_react_native_demoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AD627F412B8C5CBC0052B558 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD627F432B8C7AA80052B558 /* react_native_demo_app.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = react_native_demo_app.entitlements; sourceTree = "<group>"; };
+		AD8B1AEB2BA17C5E00DBB738 /* ymchat_react_native_demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ymchat_react_native_demo.entitlements; path = ymchat_react_native_demo/ymchat_react_native_demo.entitlements; sourceTree = "<group>"; };
 		D281D0199AA4CE82D7082DCC /* Pods_ymchat_react_native_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ymchat_react_native_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -89,6 +90,7 @@
 		13B07FAE1A68108700A75B9A /* ymchat_react_native_demo */ = {
 			isa = PBXGroup;
 			children = (
+				AD8B1AEB2BA17C5E00DBB738 /* ymchat_react_native_demo.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -485,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ymchat_react_native_demo/ymchat_react_native_demo.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ymchat_react_native_demo/Info.plist;
@@ -512,6 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ymchat_react_native_demo/ymchat_react_native_demo.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = ymchat_react_native_demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -611,10 +615,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -693,10 +694,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
