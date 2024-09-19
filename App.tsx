@@ -113,11 +113,16 @@ const MyApp = () => {
     // set theme for chatbot
     YMChat.setThemeBotName('Demo Bot Name');
     YMChat.setThemeBotDescription('Demo Bot Description');
-    YMChat.setThemePrimaryColor('#000000');
-    YMChat.setThemeSecondaryColor('#ffffff');
+    YMChat.setThemePrimaryColor('#ff0000');
+    YMChat.setThemeSecondaryColor('#00ff00');
+    YMChat.setThemeBotBubbleBackgroundColor('#0000ff');
     YMChat.setThemeBotIcon(
       'https://cdn.yellowmessenger.com/XJFcMhLpN6L91684914460598.png',
     );
+    YMChat.setThemeBotClickIcon(
+      'https://cdn.yellowmessenger.com/XJFcMhLpN6L91684914460598.png',
+    );
+    YMChat.setChatContainerTheme('dark');
 
     // presents the chatbot
     YMChat.startChatbot();

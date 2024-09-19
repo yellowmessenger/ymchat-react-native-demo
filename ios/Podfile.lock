@@ -1179,10 +1179,10 @@ PODS:
     - React-Core
     - RNFBApp
   - SocketRocket (0.6.1)
-  - YMChat (1.16.0)
-  - ymchat-react-native (2.11.1):
+  - YMChat (1.19.0)
+  - ymchat-react-native (2.15.0):
     - React
-    - YMChat (~> 1.16)
+    - YMChat (~> 1.19)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -1437,8 +1437,8 @@ SPEC CHECKSUMS:
   RNFBApp: 1c8688e63b58bb57e6a6e9032aa227f8df8371bf
   RNFBMessaging: 9b16c72d001787aca05e2fb997e5c979b821dbb4
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
-  YMChat: c7325a2c25a2b576ecdcb2b942108fc80cb3b60f
-  ymchat-react-native: efbbccd436cea2d760063a7ad104e60336fcdbab
+  YMChat: 34b225c235422ab99ad2b19c84b272e6d551225a
+  ymchat-react-native: 66d175f72c967ad87854f8d41c06f749800c4eb0
   Yoga: 64cd2a583ead952b0315d5135bf39e053ae9be70
 
 PODFILE CHECKSUM: 2c294e1701a1054e4fc70dd9e942645f57de10ba
